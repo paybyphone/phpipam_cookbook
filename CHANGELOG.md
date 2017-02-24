@@ -1,3 +1,7 @@
+## 0.1.4-pre
+
+Bumped version for dev.
+
 ## 0.1.3
 
 Added version automation off of `metadata.rb`. The cookbook is now versioned off
