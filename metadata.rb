@@ -1,0 +1,15 @@
+name             'phpipam'
+maintainer       'PayByPhone'
+maintainer_email 'systems@paybyphone.com'
+license          'Apache 2.0'
+description      'Installs PHPIPAM (https://phpipam.net/)'
+long_description 'Installs PHPIPAM (https://phpipam.net/)'
+
+version          '0.1.0'
+supports         'ubuntu', '= 14.04'
+
+depends 'apache2',  '~> 3.2'
+depends 'mysql',    '~> 8.2'
+depends 'php',      '~> 2.2'
+depends 'database', '~> 6.1'
+depends 'apt',      '~> 6.0'
