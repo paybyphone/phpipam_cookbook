@@ -55,7 +55,6 @@ the web content recipes. Defaults to `/tmp/phpipam`.
 user for web installations. Defaults to `root`.
 * `node['phpipam']['content_group']` - The group of the downloaded content. This is modified to the system's web
 group for web installations. Defaults to `root`.
-* `node['phpipam']['install_apache']` - Install the Apache2 web server as part of the cookbook deployment. Defaults to `true`.
 * `node['phpipam']['install_mysql']` - Install MySQL as part of the cookbook deployment. Defaults to `true`.
 
 # Recipes
