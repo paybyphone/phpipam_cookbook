@@ -6,7 +6,7 @@ if `node['phpipam']['install_mysql']` is set to true (the default).
 #>
 =end
 
-include_recipe 'phpipam::_check_version'
+include_recipe 'phpipam::_check_ipam_version'
 include_recipe 'apt::default'
 include_recipe 'phpipam::_install_mysql' if node['phpipam']['install_mysql']
 
