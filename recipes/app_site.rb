@@ -8,7 +8,7 @@ default).
 
 include_recipe 'phpipam::_check_ipam_version'
 include_recipe 'apt::default'
-include_recipe 'phpipam::_install_apache2' if node['phpipam']['install_apache']
+include_recipe 'phpipam::_install_apache2'
 
 GIT_SRC = 'https://github.com/phpipam/phpipam.git'.freeze
 

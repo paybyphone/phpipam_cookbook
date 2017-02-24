@@ -78,8 +78,5 @@ group for web installations.
 =end
 default['phpipam']['content_group'] = 'root'
 
-#<> Install the Apache2 web server as part of the cookbook deployment.
-default['phpipam']['install_apache'] = true
-
 #<> Install MySQL as part of the cookbook deployment.
 default['phpipam']['install_mysql'] = true
