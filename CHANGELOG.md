@@ -1,6 +1,6 @@
-## 0.1.2-pre
+## 0.1.2
 
-Bumped version for dev.
+Bump a version to lock in documentation updates.
 
 ## 0.1.1
 
