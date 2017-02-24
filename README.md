@@ -71,8 +71,7 @@ if `node['phpipam']['install_mysql']` is set to true (the default).
 ## phpipam::app_site
 
 This recipe installs and configures the application and its content. It also
-installs Apache 2, if `node['phpipam']['install_apache']` is set to true (the
-default).
+installs Apache 2, if not installed already.
 
 # License and Maintainer
 

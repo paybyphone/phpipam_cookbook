@@ -1,8 +1,7 @@
 =begin
 #<
 This recipe installs and configures the application and its content. It also
-installs Apache 2, if `node['phpipam']['install_apache']` is set to true (the
-default).
+installs Apache 2, if not installed already.
 #>
 =end
 
