@@ -1,3 +1,7 @@
+## 0.1.2-pre
+
+Bumped version for dev.
+
 ## 0.1.1
 
 This release should be used over `0.1.0` as there were some bugs that make using
