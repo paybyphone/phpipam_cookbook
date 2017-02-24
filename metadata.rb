@@ -5,7 +5,7 @@ license          'Apache 2.0'
 description      'Installs PHPIPAM (https://phpipam.net/)'
 long_description 'Installs PHPIPAM (https://phpipam.net/)'
 
-version          '0.1.0'
+version          IO.read(File.expand_path('../CHANGELOG.md', __FILE__)).match(/^##\s+([-_.a-zA-Z0-9]+)$/)[1]
 supports         'ubuntu', '= 14.04'
 
 depends 'apache2',  '~> 3.2'
