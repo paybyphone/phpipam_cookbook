@@ -1,6 +1,7 @@
 ## 0.1.4-pre
 
-Bumped version for dev.
+Added `build-essential` to the cookbook chain, as building the `mysql2` gem
+requires `make`, which may not be available on minimal systems.
 
 ## 0.1.3
 

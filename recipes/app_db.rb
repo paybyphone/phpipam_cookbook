@@ -8,6 +8,7 @@ if `node['phpipam']['install_mysql']` is set to true (the default).
 
 include_recipe 'phpipam::_check_ipam_version'
 include_recipe 'apt::default'
+include_recipe 'build-essential::default'
 include_recipe 'phpipam::_install_mysql' if node['phpipam']['install_mysql']
 
 cookbook = run_context.cookbook_collection[cookbook_name]

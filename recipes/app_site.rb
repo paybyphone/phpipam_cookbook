@@ -7,6 +7,7 @@ installs Apache 2, if not installed already.
 
 include_recipe 'phpipam::_check_ipam_version'
 include_recipe 'apt::default'
+include_recipe 'build-essential::default'
 include_recipe 'phpipam::_install_apache2'
 
 GIT_SRC = 'https://github.com/phpipam/phpipam.git'.freeze
