@@ -1,6 +1,13 @@
-## 0.1.5-pre
+## 0.1.5
+    
+The `uri_base` option is back. Defining a `uri_base` other than `/` does the following:
 
-Bumped version for dev.
+ * Sets `BASE` and `RewriteBase` in `config.php` and `.htaccess` respectively to
+   whatever you define
+ * Adds an `Alias` directive in Apache for the correct URI path (in case
+   you are not using this to reverse proxy)
+
+Also explicitly forced the MPM in use to prefork.
 
 ## 0.1.4
 
