@@ -33,13 +33,16 @@ PHP5_MANUAL_ENABLE_MODS.each do |phpmod|
   end
 end
 
+node.default['apache']['mpm'] = 'prefork'
+
 web_app 'phpipam' do
-  cookbook 'phpipam'
-  template 'apache2_vhost.erb'
-  server_name node['phpipam']['vhost_name']
-  server_aliases node['phpipam']['vhost_aliases']
-  docroot node['phpipam']['docroot']
   allow_override ['All']
+  cookbook 'phpipam'
+  docroot node['phpipam']['docroot']
+  server_aliases node['phpipam']['vhost_aliases']
+  server_name node['phpipam']['vhost_name']
+  template 'apache2_vhost.erb'
+  uri_base node['phpipam']['uri_base']
 end
 
 include_recipe 'apache2::mod_php5'

@@ -15,3 +15,12 @@ suites:
     run_list:
       - recipe[phpipam::app_db]
       - recipe[phpipam::app_site]
+  - name: proxy_uri
+    run_list:
+      - recipe[phpipam::app_db]
+      - recipe[phpipam::app_site]
+    attributes:
+      phpipam:
+        uri_base: /phpipam/
+
+

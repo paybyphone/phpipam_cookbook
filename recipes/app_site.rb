@@ -35,6 +35,16 @@ git 'ipam_download' do
   user CONTENT_OWNER
 end
 
+template "#{node['phpipam']['docroot']}/.htaccess" do
+  group CONTENT_GROUP
+  mode 0644
+  source "htaccess_#{node['phpipam']['version']}.erb"
+  user CONTENT_OWNER
+  variables(
+    uri_base: node['phpipam']['uri_base'],
+  )
+end
+
 template "#{node['phpipam']['docroot']}/config.php" do
   group CONTENT_GROUP
   mode 0644
@@ -45,5 +55,6 @@ template "#{node['phpipam']['docroot']}/config.php" do
     db_name: node['phpipam']['db_name'],
     db_password: node['phpipam']['db_password'],
     db_user: node['phpipam']['db_user'],
+    uri_base: node['phpipam']['uri_base'],
   )
 end

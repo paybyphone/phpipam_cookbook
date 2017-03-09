@@ -1,9 +1,10 @@
 <VirtualHost *:<%= @params[:server_port] || node['apache']['listen_ports'].first %>>
-  <% if @params[:server_name] -%>ServerName <%= @params[:server_name] %><%- end %>
+  <% if @params[:server_name] %>ServerName <%= @params[:server_name] %><% end %>
   <% if @params[:server_aliases] -%>
   ServerAlias <%= @params[:server_aliases].join " " %>
   <% end -%>
   DocumentRoot <%= @params[:docroot] %>
+  <% if @params[:uri_base] != '/' %>Alias <%= @params[:uri_base] %> <%= @params[:docroot] %>/<% end %>
 
   <Directory <%= @params[:docroot] %>>
     Options <%= [@params[:directory_options] || "FollowSymLinks" ].flatten.join " " %>
