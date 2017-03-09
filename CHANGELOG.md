@@ -1,3 +1,7 @@
+## 0.1.6-pre
+
+Bumped version for dev.
+
 ## 0.1.5
     
 The `uri_base` option is back. Defining a `uri_base` other than `/` does the following:
