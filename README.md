@@ -20,10 +20,11 @@ You can view all the PHPIPAM documentation at https://phpipam.net/.
 ## Cookbooks:
 
 * apache2 (~> 3.2)
+* apt (~> 6.0)
+* build-essential (~> 8.0)
+* database (~> 6.1)
 * mysql (~> 8.2)
 * php (~> 2.2)
-* database (~> 6.1)
-* apt (~> 6.0)
 
 # Attributes
 
