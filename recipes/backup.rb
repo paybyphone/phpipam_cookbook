@@ -3,7 +3,7 @@
 This recipe installs backups using the [Ruby backup gem][1]. Options are
 available in node attributes for sending the backups to S3, syslog logging, and
 specifying notifier configuration through the
-node['phpipam']['backup_notifiers'] array. See the attributes section for
+`node['phpipam']['backup_notifiers']` array. See the description section for
 examples.
 
 [1]: https://github.com/backup/backup
