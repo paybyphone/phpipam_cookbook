@@ -1,3 +1,7 @@
+## 0.1.7-pre
+
+Bumped version for dev.
+
 ## 0.1.6
 
 This update adds backup support - installed using the ruby backup gem.
