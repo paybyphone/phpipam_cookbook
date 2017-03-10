@@ -1,0 +1,11 @@
+# Backup v4.x Configuration
+
+root_path '<%= @backup_home %>'
+tmp_path '<%= @backup_tmp_path %>'
+data_path '<%= @backup_home%>/data'
+
+Logger.configure do
+  console.quiet     = true
+  logfile.enabled    = <%= @backup_enable_logfile %>
+  syslog.enabled    = <%= @backup_enable_syslog %>
+end

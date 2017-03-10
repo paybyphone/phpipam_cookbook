@@ -80,3 +80,84 @@ default['phpipam']['content_group'] = 'root'
 
 #<> Install MySQL as part of the cookbook deployment.
 default['phpipam']['install_mysql'] = true
+
+=begin
+#<
+The user to create to perform backups under. A group is also created under
+this user name.
+#>
+=end
+default['phpipam']['backup_user'] = 'backup'
+
+#<> The home directory for backup configuration data and content.
+default['phpipam']['backup_home'] = '/var/backup'
+
+#<> The directory to hold backup data while performing backups.
+default['phpipam']['backup_tmp_path'] = "#{default['phpipam']['backup_home']}/tmp"
+
+=begin
+#<
+Enable logging backups to a log file. These logs go to the "log" directory
+in the directory defined by `node['phpipam']['backup_home']`.
+#>
+=end
+default['phpipam']['backup_enable_logfile'] = true
+
+#<> Enable syslog logging. Logs get logged as `backup` under facility local0.
+default['phpipam']['backup_enable_syslog'] = false
+
+#<> The directory to store locally-kept backups.
+default['phpipam']['backup_storage_path'] = "#{default['phpipam']['backup_home']}/storage"
+
+#<> Enable S3 backup storage.
+default['phpipam']['backup_s3_enabled'] = false
+
+#<> The AWS Access Key ID for S3 backup storage.
+default['phpipam']['backup_s3_access_key_id'] = ''
+
+#<> The AWS secret access key for S3 backup storage.
+default['phpipam']['backup_s3_secret_access_key'] = ''
+
+#<> The AWS region your bucket is in.
+default['phpipam']['backup_s3_region'] = ''
+
+#<> The S3 bucket name for S3 storage.
+default['phpipam']['backup_s3_bucket'] = ''
+
+#<> The key (path) S3 backups will be stored in.
+default['phpipam']['backup_s3_path'] = ''
+
+#<> The number of days to keep local backups.
+default['phpipam']['backup_keep_days_local'] = 7
+
+#<> The number of days to keep S3 backups.
+default['phpipam']['backup_keep_days_s3'] = 90
+
+=begin
+An array of notifiers. Notifiers follow the general syntax below, based off of
+the syntax of the backup gem's [Notifiers resource][1]:
+
+[1]: http://backup.github.io/backup/v4/notifiers/
+
+        default['phpipam']['backup_notifiers'] = [
+          {
+            type: 'Mail',
+            opts: {
+              'from' => 'nobody@example.com',
+              'to' => 'somebody@example.com',
+            }
+          }
+        ]
+
+Note that this cookbook by default notifies on success, warning, and failure.
+=end
+default['phpipam']['backup_notifiers'] = []
+
+#<> The minute to run the backup job on (0-59).
+default['phpipam']['backup_cron_minute'] = '00'
+
+#<> The hour to run the backup job on (0-23).
+default['phpipam']['backup_cron_hour'] =  '02'
+
+#<> The weekday to run the backup job on (0-6, Sun-Sat, or * for every day).
+default['phpipam']['backup_cron_weekday'] =  '*'

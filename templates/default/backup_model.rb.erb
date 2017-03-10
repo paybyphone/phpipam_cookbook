@@ -1,0 +1,38 @@
+Model.new(:phpipam_backup, 'PHPIPAM Database Backups') do
+  database MySQL do |db|
+    db.name               = '<%= @db_name %>'
+    db.username           = '<%= @db_username %>'
+    db.password           = '<%= @db_password %>'
+    db.host               = '<%= @db_host %>'
+    db.port               = 3306
+  end
+
+  store_with Local do |local|
+    local.path       = '<%= @backup_storage_path %>'
+    local.keep       = Time.now - 60 * 60 * 24 * <%= @backup_keep_days_local %>
+  end
+
+  <% if @backup_s3_enabled -%>
+  store_with S3 do |s3|
+    s3.access_key_id      = '<%= @backup_s3_access_key_id %>'
+    s3.secret_access_key  = '<%= @backup_s3_secret_access_key %>'
+    s3.region             = '<%= @backup_s3_region %>'
+    s3.bucket             = '<%= @backup_s3_bucket %>'
+    s3.path               = '<%= @backup_s3_path %>'
+    s3.keep               = Time.now - 60 * 60 * 24 * <%= @backup_keep_days_s3 %>
+  end
+  <% end -%>
+
+  compress_with Gzip
+
+  <% @backup_notifiers.each do |notifier| -%>
+  notify_by <%= notifier[:type] %> do |notifier_opts|
+    notifier_opts.on_success           = true
+    notifier_opts.on_warning           = true
+    notifier_opts.on_failure           = true
+    <% notifier[:opts].each do |opt_key, opt_value| -%>
+    notifier_opts.<%= opt_key %> = <%= opt_value.inspect %>
+    <% end -%>
+  end
+  <% end -%>
+end

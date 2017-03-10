@@ -14,3 +14,5 @@ depends 'build-essential', '~> 8.0'
 depends 'database',        '~> 6.1'
 depends 'mysql',           '~> 8.2'
 depends 'php',             '~> 2.2'
+depends 'poise-ruby',      '~> 2.2'
+

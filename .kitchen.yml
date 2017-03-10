@@ -22,5 +22,28 @@ suites:
     attributes:
       phpipam:
         uri_base: /phpipam/
-
-
+  - name: backup
+    run_list:
+      - recipe[phpipam::app_db]
+      - recipe[phpipam::app_site]
+      - recipe[phpipam::backup]
+    attributes:
+      phpipam:
+        backup_enable_syslog: true
+        backup_s3_enabled: <% if ENV.include?('KITCHEN_S3') %>true<% end %>
+        backup_s3_access_key_id: <%= ENV['KITCHEN_S3_AWS_ACCESS_KEY_ID'] %>
+        backup_s3_secret_access_key: <%= ENV['KITCHEN_S3_AWS_SECRET_ACCESS_KEY'] %>
+        backup_s3_region: <%= ENV['KITCHEN_S3_AWS_REGION'] %>
+        backup_s3_bucket: <%= ENV['KITCHEN_S3_AWS_BUCKET'] %>
+        backup_s3_path: <%= ENV['KITCHEN_S3_AWS_PATH'] %>
+  - name: backupslack
+    run_list:
+      - recipe[phpipam::app_db]
+      - recipe[phpipam::app_site]
+      - recipe[phpipam::backup]
+    attributes:
+      phpipam:
+        backup_notifiers:
+          - type: Slack
+            opts:
+              webhook_url: <%= ENV['KITCHEN_SLACK_URL'] %>
