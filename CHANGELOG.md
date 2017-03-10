@@ -1,6 +1,9 @@
-## 0.1.6-pre
+## 0.1.6
 
-Bumped version for dev.
+This update adds backup support - installed using the ruby backup gem.
+Backup options can be set up to use S3 in addition to local storage
+(mandatory) with configurable thresholds for each. You can also
+configure a custom number of notifiers.
 
 ## 0.1.5
     
