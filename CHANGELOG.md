@@ -1,3 +1,7 @@
+## 0.1.8-pre
+
+Bumped version for dev.
+
 ## 0.1.7
 
 Fixed the backup model template so that it doesn't render the default
