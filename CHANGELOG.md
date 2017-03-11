@@ -1,3 +1,7 @@
+## 0.2.2-pre
+
+Bumped version for dev.
+
 ## 0.2.1
 
 This update moves S3 storage to the top of the storage order in the backups
