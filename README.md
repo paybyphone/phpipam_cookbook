@@ -33,7 +33,7 @@ default, notifiers are configured to notify on success, warning, and failure.
 [2]: http://backup.github.io/backup/v4/notifiers/
 
 ```
-default['phpipam']['backup_notifiers'] = [
+node.default['phpipam']['backup_notifiers'] = [
   {
     type: 'Mail',
     opts: {
@@ -43,6 +43,23 @@ default['phpipam']['backup_notifiers'] = [
   }
 ]
 ```
+
+### Ignoring Certain Backup Warnings
+
+You can also ignore certain backup warnings via
+`node['pbpipam']['backup_ignore_warnings']:
+
+```
+node.default['pbpipam']['backup_ignore_warnings'] = [
+  /fog: the specified s3 bucket name\(.*\) contains a/,
+  'some-exact-string-match'
+]
+```
+
+**NOTE:** If you want to use literals more complex than a string (like the regex
+above), you need to specify your node attributes with Ruby - either use a
+wrapper cookbook or a process that passes your attributes in Ruby. Try to avoid
+JSON or YAML.
 
 # Requirements
 
@@ -111,6 +128,7 @@ in the directory defined by `node['phpipam']['backup_home']`. Defaults to `true`
 * `node['phpipam']['backup_cron_minute']` - The minute to run the backup job on (0-59). Defaults to `00`.
 * `node['phpipam']['backup_cron_hour']` - The hour to run the backup job on (0-23). Defaults to `02`.
 * `node['phpipam']['backup_cron_weekday']` - The weekday to run the backup job on (0-6, Sun-Sat, or * for every day). Defaults to `*`.
+* `node['phpipam']['backup_ignore_warning_messages']` - A list of warning messages to ignore. Defaults to `[ ... ]`.
 
 # Recipes
 
