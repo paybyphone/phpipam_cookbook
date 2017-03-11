@@ -1,6 +1,9 @@
-## 0.2.1-pre
+## 0.2.1
 
-Bumped version for dev.
+This update moves S3 storage to the top of the storage order in the backups
+recipe. This ensures that if S3 is included, that backups are properly moved to
+local storage versus copied, avoiding extra I/O  and storage issues, in addition
+to keeping unnecessary warnings from happening.
 
 ## 0.2.0
 
