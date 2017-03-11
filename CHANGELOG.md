@@ -1,6 +1,9 @@
-## 0.1.8-pre
+## 0.1.8
 
-Bumped version for dev.
+Added the `backup_ignore_warning_messages` node attribute which allows you
+to configure warning messages to ignore.
+
+Also fixed a small indentation issue on the backup model.
 
 ## 0.1.7
 
