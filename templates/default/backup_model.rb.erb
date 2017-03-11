@@ -7,11 +7,6 @@ Model.new(:phpipam_backup, 'PHPIPAM Database Backups') do
     db.port               = 3306
   end
 
-  store_with Local do |local|
-    local.path       = '<%= @backup_storage_path %>'
-    local.keep       = Time.now - 60 * 60 * 24 * <%= @backup_keep_days_local %>
-  end
-
   <% if @backup_s3_enabled -%>
   store_with S3 do |s3|
     s3.access_key_id      = '<%= @backup_s3_access_key_id %>'
@@ -22,6 +17,11 @@ Model.new(:phpipam_backup, 'PHPIPAM Database Backups') do
     s3.keep               = Time.now - 60 * 60 * 24 * <%= @backup_keep_days_s3 %>
   end
   <% end -%>
+
+  store_with Local do |local|
+    local.path       = '<%= @backup_storage_path %>'
+    local.keep       = Time.now - 60 * 60 * 24 * <%= @backup_keep_days_local %>
+  end
 
   compress_with Gzip
 
