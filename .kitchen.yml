@@ -50,3 +50,9 @@ suites:
               on_success: false
               on_warning: false
               on_failure: false
+  - name: backupignorewarnings
+    run_list:
+      - recipe[backup_defaults::default]
+      - recipe[phpipam::app_db]
+      - recipe[phpipam::app_site]
+      - recipe[phpipam::backup]

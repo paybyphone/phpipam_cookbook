@@ -6,6 +6,9 @@ data_path '<%= @backup_home%>/data'
 
 Logger.configure do
   console.quiet     = true
-  logfile.enabled    = <%= @backup_enable_logfile %>
+  logfile.enabled   = <%= @backup_enable_logfile %>
   syslog.enabled    = <%= @backup_enable_syslog %>
+  <% @ignore_warning_messages.each do |message| -%>
+  ignore_warning    <%= message.inspect %>
+  <% end -%>
 end

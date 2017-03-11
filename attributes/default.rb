@@ -161,3 +161,6 @@ default['phpipam']['backup_cron_hour'] =  '02'
 
 #<> The weekday to run the backup job on (0-6, Sun-Sat, or * for every day).
 default['phpipam']['backup_cron_weekday'] =  '*'
+
+#<> A list of warning messages to ignore.
+default['phpipam']['backup_ignore_warning_messages'] =  []

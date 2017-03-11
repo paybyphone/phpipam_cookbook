@@ -31,7 +31,7 @@ default, notifiers are configured to notify on success, warning, and failure.
 [2]: http://backup.github.io/backup/v4/notifiers/
 
 ```
-default['phpipam']['backup_notifiers'] = [
+node.default['phpipam']['backup_notifiers'] = [
   {
     type: 'Mail',
     opts: {
@@ -41,3 +41,20 @@ default['phpipam']['backup_notifiers'] = [
   }
 ]
 ```
+
+### Ignoring Certain Backup Warnings
+
+You can also ignore certain backup warnings via
+`node['pbpipam']['backup_ignore_warnings']:
+
+```
+node.default['pbpipam']['backup_ignore_warnings'] = [
+  /fog: the specified s3 bucket name\(.*\) contains a/,
+  'some-exact-string-match'
+]
+```
+
+**NOTE:** If you want to use literals more complex than a string (like the regex
+above), you need to specify your node attributes with Ruby - either use a
+wrapper cookbook or a process that passes your attributes in Ruby. Try to avoid
+JSON or YAML.

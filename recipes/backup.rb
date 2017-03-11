@@ -51,10 +51,11 @@ template "#{node['phpipam']['backup_home']}/etc/config.rb" do
   source 'backup_config.rb.erb'
   user node['phpipam']['backup_user']
   variables(
-    backup_home:            node['phpipam']['backup_home'],
-    backup_tmp_path:        node['phpipam']['backup_tmp_path'],
-    backup_enable_logfile:  node['phpipam']['backup_enable_logfile'],
-    backup_enable_syslog:   node['phpipam']['backup_enable_syslog']
+    backup_home:              node['phpipam']['backup_home'],
+    backup_tmp_path:          node['phpipam']['backup_tmp_path'],
+    backup_enable_logfile:    node['phpipam']['backup_enable_logfile'],
+    backup_enable_syslog:     node['phpipam']['backup_enable_syslog'],
+    ignore_warning_messages:  node['phpipam']['backup_ignore_warning_messages']
   )
 end
 
