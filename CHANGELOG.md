@@ -1,3 +1,7 @@
+## 0.2.1-pre
+
+Bumped version for dev.
+
 ## 0.2.0
 
 **NOTE:** To avoid bugs and errors, do not use any 0.1.x version of this
