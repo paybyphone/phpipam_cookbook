@@ -109,8 +109,8 @@ user for web installations. Defaults to `root`.
 group for web installations. Defaults to `root`.
 * `node['phpipam']['install_mysql']` - Install MySQL as part of the cookbook deployment. Defaults to `true`.
 * `node['phpipam']['backup_user']` - The user to create to perform backups under. A group is also created under
-this user name. Defaults to `backup`.
-* `node['phpipam']['backup_home']` - The home directory for backup configuration data and content. Defaults to `/var/backup`.
+this user name. Defaults to `ipambackup`.
+* `node['phpipam']['backup_home']` - The home directory for backup configuration data and content. Defaults to `/var/ipambackup`.
 * `node['phpipam']['backup_tmp_path']` - The directory to hold backup data while performing backups. Defaults to `#{default['phpipam']['backup_home']}/tmp`.
 * `node['phpipam']['backup_enable_logfile']` - Enable logging backups to a log file. These logs go to the "log" directory
 in the directory defined by `node['phpipam']['backup_home']`. Defaults to `true`.
