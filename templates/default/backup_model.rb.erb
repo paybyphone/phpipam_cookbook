@@ -26,10 +26,16 @@ Model.new(:phpipam_backup, 'PHPIPAM Database Backups') do
   compress_with Gzip
 
   <% @backup_notifiers.each do |notifier| -%>
-  notify_by <%= notifier[:type] %> do |notifier_opts|
+    notify_by <%= notifier[:type] %> do |notifier_opts|
+    <% unless notifier[:opts].include?('on_success') -%>
     notifier_opts.on_success           = true
+    <% end -%>
+    <% unless notifier[:opts].include?('on_warning') -%>
     notifier_opts.on_warning           = true
+    <% end -%>
+    <% unless notifier[:opts].include?('on_failure') -%>
     notifier_opts.on_failure           = true
+    <% end -%>
     <% notifier[:opts].each do |opt_key, opt_value| -%>
     notifier_opts.<%= opt_key %> = <%= opt_value.inspect %>
     <% end -%>

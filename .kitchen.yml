@@ -47,3 +47,6 @@ suites:
           - type: Slack
             opts:
               webhook_url: <%= ENV['KITCHEN_SLACK_URL'] %>
+              on_success: false
+              on_warning: false
+              on_failure: false
