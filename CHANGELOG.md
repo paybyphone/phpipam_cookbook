@@ -1,6 +1,8 @@
-## 0.1.7-pre
+## 0.1.7
 
-Bumped version for dev.
+Fixed the backup model template so that it doesn't render the default
+`on_success`, `on_warning`, or `on_failure` options if user-defined ones are
+given.
 
 ## 0.1.6
 
