@@ -45,10 +45,10 @@ node.default['phpipam']['backup_notifiers'] = [
 ### Ignoring Certain Backup Warnings
 
 You can also ignore certain backup warnings via
-`node['pbpipam']['backup_ignore_warnings']:
+`node['pbpipam']['backup_ignore_warning_messages']`:
 
 ```
-node.default['pbpipam']['backup_ignore_warnings'] = [
+node.default['pbpipam']['backup_ignore_warning_messages'] = [
   /fog: the specified s3 bucket name\(.*\) contains a/,
   'some-exact-string-match'
 ]
