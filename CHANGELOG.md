@@ -1,6 +1,18 @@
-## 0.1.9-pre
+## 0.2.0
 
-Bumped version for dev.
+**NOTE:** To avoid bugs and errors, do not use any 0.1.x version of this
+cookbook - there may be certain features that were not usable as intended.
+
+Fixes since 0.1.8:
+
+ * Fixed backup cron job, path to job now uses an absolute path. This ensures
+   that the job runs.
+ * Ensure that the default `/var/run/mysql` symlink that we create does not get
+   blown away on subsequent Chef runs other than the first one.
+ * Change the backup user to `ipambackup`, and the default home directory to
+   `/var/ipambackup`. This ensures that the installed backup job does not
+   interfere with any distro-level backup processes that use the default
+   `backup` user and `/var/backup` directory.
 
 ## 0.1.8
 
