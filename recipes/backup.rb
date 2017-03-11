@@ -84,7 +84,7 @@ end
 
 cron 'ipam_backup' do
   action :create
-  command  "backup perform --config-file #{node['phpipam']['backup_home']}/etc/config.rb --trigger phpipam_backup"
+  command  "/usr/local/bin/backup perform --config-file #{node['phpipam']['backup_home']}/etc/config.rb --trigger phpipam_backup"
   hour     node['phpipam']['backup_cron_hour']
   minute   node['phpipam']['backup_cron_minute']
   user     node['phpipam']['backup_user']
