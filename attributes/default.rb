@@ -87,10 +87,10 @@ The user to create to perform backups under. A group is also created under
 this user name.
 #>
 =end
-default['phpipam']['backup_user'] = 'backup'
+default['phpipam']['backup_user'] = 'ipambackup'
 
 #<> The home directory for backup configuration data and content.
-default['phpipam']['backup_home'] = '/var/backup'
+default['phpipam']['backup_home'] = '/var/ipambackup'
 
 #<> The directory to hold backup data while performing backups.
 default['phpipam']['backup_tmp_path'] = "#{default['phpipam']['backup_home']}/tmp"
