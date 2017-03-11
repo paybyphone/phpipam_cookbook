@@ -18,6 +18,7 @@ end
 directory '/var/run/mysqld' do
   recursive true
   action :delete
+  only_if { !File.symlink?('/var/run/mysqld') }
 end
 
 link '/var/run/mysqld' do
