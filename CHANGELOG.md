@@ -1,6 +1,10 @@
-## 0.2.2-pre
+## 0.2.2
 
-Bumped version for dev.
+ * `uri_base` now has its trailing slash, if present, trimmed on non-default
+   setups. Docroot path is also normalized to ensure that trailing slashes are
+   present everywhere in the apache config. This is to support proxies where
+   the bare word URI (like `/phpipam`) is desired and the user does not want to
+   set up an extra redirect.
 
 ## 0.2.1
 
