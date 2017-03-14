@@ -63,8 +63,9 @@ Chef server. You have been warned!
 
 ## About Releases
 
-Since this cookbook has not been released on Supermarket, you may need to take
-extra steps to include it in your Chef server or other cookbooks with Berkshelf.
+This cookbook has not been released on Supermarket. This may change in the
+future, but until then, you need to take extra steps to include it in your
+Chef server or other cookbooks with Berkshelf.
 
 ### Including in Berkshelf
 
