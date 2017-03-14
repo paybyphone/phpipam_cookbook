@@ -4,7 +4,7 @@
   ServerAlias <%= @params[:server_aliases].join " " %>
   <% end -%>
   DocumentRoot <%= @params[:docroot] %>
-  <% if @params[:uri_base] != '/' %>Alias <%= @params[:uri_base] %> <%= @params[:docroot] %>/<% end %>
+  <% if @params[:uri_base] != '/' %>Alias <%= @params[:uri_base].chomp('/') %> <%= @params[:docroot] %><% end %>
 
   <Directory <%= @params[:docroot] %>>
     Options <%= [@params[:directory_options] || "FollowSymLinks" ].flatten.join " " %>

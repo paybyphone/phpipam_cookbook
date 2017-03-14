@@ -38,7 +38,7 @@ node.default['apache']['mpm'] = 'prefork'
 web_app 'phpipam' do
   allow_override ['All']
   cookbook 'phpipam'
-  docroot node['phpipam']['docroot']
+  docroot node['phpipam']['docroot'].end_with?('/') ? node['phpipam']['docroot'] : "#{node['phpipam']['docroot']}/"
   server_aliases node['phpipam']['vhost_aliases']
   server_name node['phpipam']['vhost_name']
   template 'apache2_vhost.erb'
