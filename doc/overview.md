@@ -57,4 +57,37 @@ node.default['pbpipam']['backup_ignore_warning_messages'] = [
 **NOTE:** If you want to use literals more complex than a string (like the regex
 above), you need to specify your node attributes with Ruby - either use a
 wrapper cookbook or a process that passes your attributes in Ruby. Try to avoid
-JSON or YAML.
+JSON or YAML. **Note that this behaviour is not necessarily Chef compliant** -
+for example, your `Regexp` literals will show up as strings when saved to the
+Chef server. You have been warned!
+
+## About Releases
+
+Since this cookbook has not been released on Supermarket, you may need to take
+extra steps to include it in your Chef server or other cookbooks with Berkshelf.
+
+### Including in Berkshelf
+
+Releases are tagged, so you can include the cookbook at a certain release simple
+enough. Below is an example `Berksfile`. Change the release version below to
+the release that you want.
+
+```
+source "https://supermarket.chef.io"
+
+cookbook 'phpipam', git: 'https://github.com/paybyphone/phpipam_cookbook.git', tag: 'v9.9.99'
+
+metadata
+```
+
+### Adding Direct to Chef Server
+
+To add this cookbook to a Chef server directly, clone the repository, check out
+the release you want, and then run the Berkshelf commands to add it:
+
+```
+git clone https://github.com/paybyphone/phpipam_cookbook.git<Paste>
+cd phpipam_cookbook
+git checkout v9.9.99
+berks install && berks upload
+```
