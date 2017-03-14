@@ -89,7 +89,7 @@ To add this cookbook to a Chef server directly, clone the repository, check out
 the release you want, and then run the Berkshelf commands to add it:
 
 ```
-git clone https://github.com/paybyphone/phpipam_cookbook.git<Paste>
+git clone https://github.com/paybyphone/phpipam_cookbook.git
 cd phpipam_cookbook
 git checkout v9.9.99
 berks install && berks upload
