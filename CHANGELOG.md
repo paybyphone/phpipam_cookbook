@@ -1,3 +1,7 @@
+## 0.2.3-pre
+
+Bumped version for dev.
+
 ## 0.2.2
 
  * `uri_base` now has its trailing slash, if present, trimmed on non-default
