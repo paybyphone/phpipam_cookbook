@@ -56,3 +56,8 @@ suites:
       - recipe[phpipam::app_db]
       - recipe[phpipam::app_site]
       - recipe[phpipam::backup]
+  - name: phpipam-sdk-go-testacc
+    run_list:
+      - recipe[phpipam::app_db]
+      - recipe[phpipam::app_site]
+      - recipe[phpipam_sdk_go_testacc::default]
