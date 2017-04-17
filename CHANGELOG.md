@@ -1,3 +1,7 @@
+## 0.3.1-pre
+
+Bumped version for dev.
+
 ## 0.3.0
 
 This release adds support for tracking a `dev` version of PHPIPAM. This is a
