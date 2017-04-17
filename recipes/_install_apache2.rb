@@ -4,6 +4,7 @@ PHP_EXTRA_PACKAGES = [
   'php-pear',
   'php5-cli',
   'php5-curl',
+  'php5-gd',
   'php5-gmp',
   'php5-ldap',
   'php5-mcrypt',

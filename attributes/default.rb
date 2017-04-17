@@ -46,9 +46,9 @@ default['phpipam']['vhost_aliases'] = nil
 #<
 The version of IPAM to fetch the content for (and ultimately install).
 
-Note that this technically is a ref string - hence it can be a version tag
-(the intention), or a branch or commit. Using this to do the latter two is
-not recommended as you will download a pre-release version of IPAM.
+This can currently be one of `1.2` and `dev`. `dev` is an alias to a current
+commit snapshotted off of master, with schema and configuration snapshotted off
+of that commit. See `recipes/app_site.rb` for the specific commit dev tracks.
 #>
 =end
 default['phpipam']['version'] = '1.2'

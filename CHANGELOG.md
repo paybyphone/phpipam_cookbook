@@ -1,6 +1,13 @@
-## 0.2.3-pre
+## 0.3.0
 
-Bumped version for dev.
+This release adds support for tracking a `dev` version of PHPIPAM. This is a
+commit off of master, that will hopefully end up being version 1.3 at some point
+in time.
+
+This version also currently tracks PBP's fork at
+https://github.com/paybyphone/phpipam while the nested custom field issues
+outlined in https://github.com/phpipam/phpipam/issues/1073 and
+https://github.com/phpipam/phpipam/pull/1100 are fixed.
 
 ## 0.2.2
 

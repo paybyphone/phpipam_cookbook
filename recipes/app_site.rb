@@ -10,7 +10,8 @@ include_recipe 'apt::default'
 include_recipe 'build-essential::default'
 include_recipe 'phpipam::_install_apache2'
 
-GIT_SRC = 'https://github.com/phpipam/phpipam.git'.freeze
+GIT_SRC = 'https://github.com/paybyphone/phpipam.git'.freeze
+DEV_SHA256 = '6a8dfd04c20a2f23444a52b26c9224a2e2d29da8'.freeze
 
 CONTENT_OWNER = 'www-data'.freeze
 CONTENT_GROUP = 'www-data'.freeze
@@ -31,7 +32,11 @@ git 'ipam_download' do
   destination node['phpipam']['docroot']
   group CONTENT_GROUP
   repository GIT_SRC
-  revision node['phpipam']['version']
+  if node['phpipam']['version'] == 'dev'
+    revision DEV_SHA256
+  else
+    revision node['phpipam']['version']
+  end
   user CONTENT_OWNER
 end
 

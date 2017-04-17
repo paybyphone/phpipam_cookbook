@@ -61,3 +61,6 @@ suites:
       - recipe[phpipam::app_db]
       - recipe[phpipam::app_site]
       - recipe[phpipam_sdk_go_testacc::default]
+    attributes:
+      phpipam:
+        version: dev

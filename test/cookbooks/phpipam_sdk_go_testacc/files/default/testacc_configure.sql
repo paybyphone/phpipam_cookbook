@@ -15,13 +15,16 @@
 --
 
 -- Custom fields
-ALTER TABLE `ipaddresses` ADD COLUMN `CustomTestAddresses` varchar(255) CHARACTER SET utf8 DEFAULT 'addresses' COMMENT 'Test field for addresses controller';
-ALTER TABLE `subnets` ADD COLUMN `CustomTestSubnets` varchar(255) CHARACTER SET utf8 DEFAULT 'subnets' COMMENT 'Test field for subnets controller';
-ALTER TABLE `vlans` ADD COLUMN `CustomTestVLANs` varchar(255) CHARACTER SET utf8 DEFAULT 'vlans' COMMENT 'Test field for vlans controller';
+ALTER TABLE `ipaddresses` ADD COLUMN `CustomTestAddresses` varchar(255) CHARACTER SET utf8 COMMENT 'Test field for addresses controller';
+ALTER TABLE `ipaddresses` ADD COLUMN `CustomTestAddresses2` varchar(255) CHARACTER SET utf8 COMMENT 'Test field for addresses controller (second field)';
+ALTER TABLE `subnets` ADD COLUMN `CustomTestSubnets` varchar(255) CHARACTER SET utf8 COMMENT 'Test field for subnets controller';
+ALTER TABLE `subnets` ADD COLUMN `CustomTestSubnets2` varchar(255) CHARACTER SET utf8 COMMENT 'Test field for subnets controller (second field)';
+ALTER TABLE `vlans` ADD COLUMN `CustomTestVLANs` varchar(255) CHARACTER SET utf8 COMMENT 'Test field for vlans controller';
+ALTER TABLE `vlans` ADD COLUMN `CustomTestVLANs2` varchar(255) CHARACTER SET utf8 COMMENT 'Test field for vlans controller (second field)';
 
 -- API
 UPDATE `settings` SET `api`='1' WHERE `id`='1';
-INSERT INTO `api` VALUES (1,'test',NULL,2,NULL,'none');
+INSERT INTO `api` VALUES (1,'test',NULL,2,NULL,'none',0,0,1,0);
 
 -- User password
 UPDATE `users` SET `password`='$6$rounds=3000$Y4skrNG25L9sM3yf$PyZuB0kOy0tgg5Ju1pFve1cJ7QSEbAwxC.4u7YO.YIC6SmhmZXZrsIqFJOiF0rBcj1zu5N9egRK4Pvn2X6xE11', `passChange`='No' WHERE `id`='1';
