@@ -11,7 +11,7 @@ include_recipe 'build-essential::default'
 include_recipe 'phpipam::_install_apache2'
 
 GIT_SRC = 'https://github.com/paybyphone/phpipam.git'.freeze
-DEV_SHA256 = '6a8dfd04c20a2f23444a52b26c9224a2e2d29da8'.freeze
+DEV_SHA256 = 'ff5323ad77f4928596df66822895b6b6a4069a08'.freeze
 
 CONTENT_OWNER = 'www-data'.freeze
 CONTENT_GROUP = 'www-data'.freeze
