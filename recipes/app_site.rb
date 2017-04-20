@@ -10,8 +10,8 @@ include_recipe 'apt::default'
 include_recipe 'build-essential::default'
 include_recipe 'phpipam::_install_apache2'
 
-GIT_SRC = 'https://github.com/paybyphone/phpipam.git'.freeze
-DEV_SHA256 = 'ff5323ad77f4928596df66822895b6b6a4069a08'.freeze
+GIT_SRC = 'https://github.com/phpipam/phpipam.git'.freeze
+DEV_SHA256 = '377139d7489376ac3622d936dbce16b1823358a1'.freeze
 
 CONTENT_OWNER = 'www-data'.freeze
 CONTENT_GROUP = 'www-data'.freeze
