@@ -1,3 +1,7 @@
+## 0.4.1-pre
+
+Bumped version for dev.
+
 ## 0.4.0
 
 Dev branch has been updated to a version that supports nested custom fields -
